@@ -1,0 +1,17 @@
+1.  create database login;
+
+
+2.CREATE TABLE `users` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `firstName` VARCHAR(50) NOT NULL,
+  `lastName` VARCHAR(50) NOT NULL,
+  `email` VARCHAR(100) NOT NULL,
+  `password` VARCHAR(64) NOT NULL,   -- Adjusted for better hashing
+  `month` INT(11) NOT NULL,
+  `day` INT(11) NOT NULL,
+  `year` INT(11) NOT NULL,
+  `nationality` VARCHAR(50) NOT NULL,
+  `gender` VARCHAR(10) NOT NULL,
+  `quiz_result` INT(11) NOT NULL,    -- Changed to INT(11) for consistency
+  `icon` VARCHAR(255) DEFAULT 'icon/default.png'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
