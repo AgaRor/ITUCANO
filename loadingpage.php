@@ -5,8 +5,8 @@ if (!isset($_SESSION['firstname'])) {
     exit();
 }
 
-$username = htmlspecialchars($_SESSION['firstname']);
-$icon = $_SESSION['selected_icon'] ?? 'icon/default.png'; //default icon if not selected
+$username = htmlspecialchars($_SESSION['username'] ?? 'Guest'); // Use username from session
+$icon = $_SESSION['selected_icon'] ?? 'icon/default.png'; // Default icon if not selected
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -178,5 +178,4 @@ $icon = $_SESSION['selected_icon'] ?? 'icon/default.png'; //default icon if not 
         <a href=""> About Us</a>
     </footer>
 </body>
-
 </html>
