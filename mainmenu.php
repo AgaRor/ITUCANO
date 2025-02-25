@@ -123,7 +123,7 @@ $_SESSION['selected_icon'] = $icon_path;
             line-height: normal;
             letter-spacing: 1.5px;
             margin-top: 350px;
-            
+
         }
 
         #logout-button a {
@@ -231,7 +231,7 @@ $_SESSION['selected_icon'] = $icon_path;
         </div>
         <div class="main-content">
             <div class="games">
-                <button id="ceb"></button>
+                <a href="Ceb_Fil_Translator.php"><button id="ceb"></button></a>
                 <button id="Aba"></button>
                 <button id="Pag-bigkas"></button>
             </div>
