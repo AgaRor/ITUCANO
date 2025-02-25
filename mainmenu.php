@@ -8,23 +8,23 @@ if (!isset($_SESSION['email'])) {
     exit();
 }
 
-$username = htmlspecialchars($_SESSION['firstname']);
-$icon = $_SESSION['selected_icon'] ?? 'icon/default.png'; //default icon if not selected
-
-
 // Fetch user data from the database
-$email = $_SESSION['email'];
-$sql = "SELECT firstName, icon_path FROM users WHERE email='$email'";
+$email = $_SESSION['email']; // Use email to fetch the user's data
+$sql = "SELECT username, icon_path FROM users WHERE email = '$email'";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
-    $username = $row['firstName'];
-    $icon_path = $row['icon_path'];
+    $username = $row['username']; // Fetch the username from the database
+    $icon_path = $row['icon_path']; // Fetch the icon path from the database
 } else {
-    $username = "Username";
+    $username = "Guest"; // Default username if not found
     $icon_path = "icon/default.png"; // Default icon if not found
 }
+
+// Store the username in the session (optional, if you want to use it later)
+$_SESSION['username'] = $username;
+$_SESSION['selected_icon'] = $icon_path;
 ?>
 
 <!DOCTYPE html>
@@ -38,18 +38,19 @@ if ($result->num_rows > 0) {
         body {
             margin: 0;
             font-family: 'Arial', sans-serif;
-            background-color: #c01414;
+            background-color: aliceblue;
             color: #333;
+
         }
 
         .container {
             display: flex;
             min-height: 100vh;
-            height:100px;
+            height: 100px;
             justify-content: center;
             align-items: center;
-            background: rgb(2,0,36);
-            background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+            background-color: aliceblue;
+
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -61,6 +62,7 @@ if ($result->num_rows > 0) {
         .sidebar {
             width: 300px;
             background-color: #ab886d;
+            opacity: 100%;
             padding: 20px;
             box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
             text-align: center;
@@ -72,13 +74,13 @@ if ($result->num_rows > 0) {
             height: 70px;
             background-color: #6cd89e;
             border-radius: 50%;
-            margin: 30px auto 20px;
+            margin-bottom: 100px;
         }
 
         .sidebar h1 {
             text-align: center;
             font-size: 1.5em;
-            margin-bottom: 71px;
+            margin-bottom: 95px;
             color: #fff;
         }
 
@@ -110,18 +112,34 @@ if ($result->num_rows > 0) {
             align-items: center;
             justify-content: center;
             font-size: 30px;
-            color: #fff;
+            color: #000;
             background-color: #db0c2e;
             border: none;
             cursor: pointer;
+            text-align: center;
+            font-family: Inter;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            letter-spacing: 1.5px;
+            margin-top: 350px;
             
-            margin-top:270px;
+        }
+
+        #logout-button a {
+            color: #000;
+            text-decoration: none;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         #logout-button:hover {
-            background-color: rgb(200, 141, 141);
+            background-color: rgba(240, 5, 5, 0.49);
+            color: #fff;
         }
-
 
         .main-content {
             flex: 1;
@@ -153,8 +171,6 @@ if ($result->num_rows > 0) {
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             width: 190px;
             height: 100px;
-          
-
         }
 
         .games button:hover {
@@ -164,17 +180,14 @@ if ($result->num_rows > 0) {
 
         #ceb {
             background-image: url('img/CEB.png');
-
         }
 
         #Aba {
             background-image: url('img/ABAKA.png');
-
         }
 
         #Pag-bigkas {
             background-image: url('img/PAg.png');
-
         }
 
         .quiz-button {
@@ -193,7 +206,7 @@ if ($result->num_rows > 0) {
         }
 
         .user-icon {
-            margin-top:60px;
+            margin-top: 60px;
             width: 80px;
             height: 80px;
             border-radius: 50%;
@@ -208,13 +221,13 @@ if ($result->num_rows > 0) {
     <div class="container">
         <div class="sidebar">
             <!-- Display the profile icon dynamically -->
-           <img src="<?php echo $icon; ?>" alt="User Icon" class ="user-icon"> 
+            <img src="<?php echo $icon_path; ?>" alt="User Icon" class="user-icon">
             <!-- Display the username dynamically -->
             <h1><?php echo htmlspecialchars($username); ?></h1>
             <button class="menu-button">Account</button>
             <button class="menu-button">Lessons</button>
             <button class="menu-button">History Progress</button>
-            <button id="logout-button">Log out</button>
+            <button id="logout-button"> <a href="Login.php">Logout</a></button>
         </div>
         <div class="main-content">
             <div class="games">
