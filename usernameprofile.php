@@ -102,7 +102,6 @@ if (!isset($_SESSION['selected_icon'])) {
 
     .enter-username {
         width: 100%;
-        position: relative;
         border-radius: 15px;
         background-color: #fff;
         border: 2px solid #ddd;
@@ -116,6 +115,8 @@ if (!isset($_SESSION['selected_icon'])) {
         font-size: 1.2rem;
         color: #bebebe;
         transition: border-color 0.3s ease;
+        margin-bottom: 20px;
+        
     }
 
     .enter-username input {
@@ -136,51 +137,31 @@ if (!isset($_SESSION['selected_icon'])) {
         box-shadow: 0 0 10px rgba(0, 123, 255, 0.3);
     }
 
-    .done a {
-        position: relative;
-        letter-spacing: 0.05em;
+    .save-button {
         width: 100%;
-        position: relative;
         border-radius: 10px;
         background-color: #fabc3f;
-        height: 76px;
+        height: 50px;
         display: flex;
-        flex-direction: row;
         align-items: center;
         justify-content: center;
-        padding: 10px;
-        box-sizing: border-box;
-        text-align: center;
-        font-size: 36px;
+        font-size: 1.2rem;
         color: #151d3b;
-        font-family: Inter;
+        font-family: Inter, sans-serif;
         text-decoration: none;
-    }
-
-    .btn_next .done {
-        width: 90%;
-        border-radius: 10px;
-        display: inline-block;
-        padding: 10px 20px;
-        font-size: 16px;
-        font-weight: bold;
-        color: #fff;
-        background-color: whitesmoke;
         border: none;
-        border-radius: 5px;
-        text-decoration: none;
         cursor: pointer;
         transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
     }
 
-    .btn_next .done:hover {
-        background-color: linear-gradient(to top left, #6699ff 0%, #ff99cc 100%);
+    .save-button:hover {
+        background-color: #e0a800;
         transform: translateY(-2px);
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
 
-    .btn_next .done:active {
-        background-color: linear-gradient(to top left, #6699ff 0%, #ff99cc 100%);
+    .save-button:active {
+        background-color: #d39e00;
         transform: translateY(0);
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     }
@@ -201,18 +182,33 @@ if (!isset($_SESSION['selected_icon'])) {
             <div class="profile-icon">
                 <img id="profile-icon" src="<?php echo $_SESSION['selected_icon']; ?>" alt="Profile Icon">
             </div>
+            <div class="enter-username">
+                <form id="username-form" action="update_username.php" method="POST">
+                    <input type="text" name="username" placeholder="Username"
+                        value="<?php echo htmlspecialchars($_SESSION['username'] ?? ''); ?>">
+            </div>
+            <div class="save-button">
+                <button type="submit" class="save-button">Save</button> <!-- Visible submit button -->
+            </div>
+            </form>
         </div>
-        <div class="enter-username">
-            <input type="text" placeholder="Username" value="<?php echo htmlspecialchars($_SESSION['email']); ?>"
-                readonly>
-        </div>
-
-        <div class="btn_next">
-            <button class="done"> <a href="loadingpage.php">Done</button></a>
-        </div>
+    </div>
     </div>
 
     <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const usernameForm = document.getElementById('username-form');
+            const usernameInput = usernameForm.querySelector('input[name="username"]');
+
+            // Optional: Submit the form when the user presses "Enter"
+            usernameInput.addEventListener('keypress', function (e) {
+                if (e.key === 'Enter') {
+                    e.preventDefault(); // Prevent default form submission
+                    usernameForm.submit();
+                }
+            });
+        });
+
         document.addEventListener('DOMContentLoaded', function () {
             const icons = document.querySelectorAll('.icon');
             const profileIcon = document.getElementById('profile-icon');
