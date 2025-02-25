@@ -15,3 +15,7 @@
   `quiz_result` INT(11) NOT NULL,    -- Changed to INT(11) for consistency
   `icon` VARCHAR(255) DEFAULT 'icon/default.png'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+3.
+
+ALTER TABLE `users` ADD COLUMN `username` VARCHAR(100) AFTER `email`;
