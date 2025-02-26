@@ -3,16 +3,17 @@ session_start();
 include('connect.php');
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $email = $_POST['email'];
+    $email_or_username = $_POST['email_or_username'];
     $password = $_POST['password'];
     $password = md5($password); // Hash the password
 
-    $sql = "SELECT * FROM users WHERE email='$email' AND password='$password'";
+    $sql = "SELECT * FROM users WHERE (email='$email_or_username' OR username='$email_or_username') AND password='$password'";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
         $_SESSION['email'] = $row['email'];
+        $_SESSION['username'] = $row['username'];
         $_SESSION['firstname'] = $row['firstName']; // Store the first name in the session
         $_SESSION['selected_icon'] = $row['icon_path']; // Store the icon path in the session
 
@@ -179,7 +180,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <div class="login-container">
         <div class="form-group">
             <form method="post" action="login.php">
-                <input type="text" name="email" placeholder="Email or username">
+                <input type="text" name="email_or_username" placeholder="Email or username">
         </div>
         <div class="form-group">
             <div class="password-container">
