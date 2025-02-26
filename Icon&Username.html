@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Icon Selector</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url('img/cover.png');
+            background-color: #f4f4f4;
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            max-width: 500px;
+            width: 100%;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .icon-selector {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .icon {
+            cursor: pointer;
+            border: 3px solid #ddd;
+            border-radius: 50%;
+            padding: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .icon:hover {
+            border-color: #007bff;
+            transform: scale(1.1);
+            box-shadow: 0 0 15px rgba(0, 123, 255, 0.3);
+        }
+
+        .icon img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+
+        .profile-icon {
+            margin-bottom: 20px;
+        }
+
+        .profile-icon img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 3px solid #007bff;
+            transition: all 0.3s ease;
+        }
+
+        .profile-icon img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(0, 123, 255, 0.4);
+        }
+
+        .enter-username {
+            width: 100%;
+            border-radius: 15px;
+            background-color: #fff;
+            border: 2px solid #ddd;
+            box-sizing: border-box;
+            height: 75px;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            font-size: 1.2rem;
+            color: #bebebe;
+            transition: border-color 0.3s ease;
+            margin-bottom: 20px;
+        }
+
+        .enter-username input {
+            width: 100%;
+            border: none;
+            outline: none;
+            font-size: 1.2rem;
+            color: #333;
+            background: transparent;
+        }
+
+        .enter-username input::placeholder {
+            color: #bebebe;
+        }
+
+        .enter-username:focus-within {
+            border-color: #007bff;
+            box-shadow: 0 0 10px rgba(0, 123, 255, 0.3);
+        }
+
+        .save-button {
+            width: 100%;
+            border-radius: 10px;
+            background-color: #fabc3f;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: #151d3b;
+            font-family: Inter, sans-serif;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+        }
+
+        .save-button:hover {
+            background-color: #e0a800;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .save-button:active {
+            background-color: #d39e00;
+            transform: translateY(0);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Select Your Icon</h1>
+        <div class="icon-selector">
+            <div class="icon" data-icon="icon/green.png"><img src="Image/Anahaw.PNG" alt="Icon 1"></div>
+            <div class="icon" data-icon="icon/ibon.png"><img src="Image/Eagle.PNG" alt="Icon 2"></div>
+            <div class="icon" data-icon="icon/kalabaw.png"><img src="Image/Kalabaw.PNG" alt="Icon 3"></div>
+            <div class="icon" data-icon="icon/mango.png"><img src="Image/Mango.PNG" alt="Icon 4"></div>
+            <div class="icon" data-icon="icon/sampaguita.png"><img src="Image/Sampaguita.png" alt="Icon 5"></div>
+        </div>
+        <div class="profile">
+            <div class="profile-icon">
+                <img id="profile-icon" alt="Profile Icon">
+            </div>
+            <div class="enter-username">
+                <input type="text" name="username" placeholder="Username">
+            </div>
+            <button class="save-button">Done</button>
+        </div>
+    </div>
+</body>
+
+</html>

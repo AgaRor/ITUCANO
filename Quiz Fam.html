@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz UI</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f8f8f8;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            text-align: center;
+        }
+        .card {
+            background-color: #f7f0e8;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+        }
+        .image {
+            background-color: white;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        .word {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+        }
+        .translation {
+            font-size: 14px;
+            color: gray;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 5px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        .correct {
+            background-color: #6fcf97;
+            color: white;
+        }
+        .incorrect {
+            background-color: #eb5757;
+            color: white;
+        }
+        .btn:hover {
+            transform: scale(1.05);
+            opacity: 0.8;
+        }
+        .speaker-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+        }
+    </style>
+    <script>
+        const quizzes = [
+            { word: "Lolo", translation: "Grandfather", image: "image1.png", voice: "lolo.mp3" },
+            { word: "Lola", translation: "Grandmother", image: "image2.png", voice: "lola.mp3" },
+            { word: "Tatay", translation: "Father", image: "image3.png", voice: "tatay.mp3" },
+            { word: "Nanay", translation: "Mother", image: "image4.png", voice: "nanay.mp3" },
+            { word: "Anak", translation: "Child", image: "image5.png", voice: "anak.mp3" },
+            { word: "Ate", translation: "Older Sister", image: "image6.png", voice: "ate.mp3" },
+            { word: "Kuya", translation: "Older Brother", image: "image7.png", voice: "kuya.mp3" },
+            { word: "Bata", translation: "Kid", image: "image8.png", voice: "bata.mp3" },
+            { word: "Kaibigan", translation: "Friend", image: "image9.png", voice: "kaibigan.mp3" },
+            { word: "Guro", translation: "Teacher", image: "image10.png", voice: "guro.mp3" },
+            { word: "Mag-aaral", translation: "Student", image: "image11.png", voice: "mag-aaral.mp3" },
+            { word: "Manggagawa", translation: "Worker", image: "image12.png", voice: "manggagawa.mp3" },
+            { word: "Doktor", translation: "Doctor", image: "image13.png", voice: "doktor.mp3" },
+            { word: "Pulis", translation: "Police", image: "image14.png", voice: "pulis.mp3" },
+            { word: "Sundalo", translation: "Soldier", image: "image15.png", voice: "sundalo.mp3" }
+        ];
+        
+        let currentIndex = 0;
+        
+        function loadQuiz() {
+            const quiz = quizzes[currentIndex];
+            document.getElementById("quiz-image").src = quiz.image;
+            document.getElementById("quiz-word").innerHTML = `${quiz.word} <button class="speaker-btn" onclick="playAudio()">🔊</button>`;
+            document.getElementById("quiz-translation").textContent = quiz.translation;
+            document.getElementById("quiz-audio").src = quiz.voice;
+        }
+        
+        function nextQuiz() {
+            currentIndex = (currentIndex + 1) % quizzes.length;
+            loadQuiz();
+        }
+
+        function playAudio() {
+            document.getElementById("quiz-audio").play();
+        }
+        
+        window.onload = loadQuiz;
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="image">
+                <img id="quiz-image" src="" alt="Illustration" width="100">
+            </div>
+            <div class="word" id="quiz-word">Lolo <button class="speaker-btn" onclick="playAudio()">🔊</button></div>
+            <div class="translation" id="quiz-translation">Grandfather</div>
+        </div>
+        <div class="buttons">
+            <button class="btn correct" onclick="nextQuiz()">Correct</button>
+            <button class="btn incorrect" onclick="nextQuiz()">Incorrect</button>
+        </div>
+    </div>
+    <audio id="quiz-audio"></audio>
+</body>
+</html>

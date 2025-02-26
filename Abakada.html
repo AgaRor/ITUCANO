@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abakada</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #dcdcdc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            display: flex;
+            width: 80%;
+            max-width: 1000px;
+            background: #dcdcdc;
+            padding: 20px;
+            border-radius: 10px;
+            gap: 20px;
+        }
+
+        /* Left Section: Abakada Table */
+        .abakada-section {
+            background: #faf5dc;
+            padding: 20px;
+            border-radius: 10px;
+            flex: 2;
+        }
+
+        h1 {
+            text-align: center;
+            color: #1f1f1f;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .abakada-table {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        .abakada-table div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+        }
+
+        .speaker-icon {
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        /* Right Section: Buttons */
+        .buttons-section {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            flex: 1;
+        }
+
+        .category-button {
+            background: #4a69bd;
+            color: white;
+            border: none;
+            padding: 15px;
+            font-size: 16px;
+            text-align: center;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .category-button:hover {
+            background: #3c5aa6;
+        }
+
+        .active {
+            border: 2px solid #87cefa;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Abakada Section -->
+        <div class="abakada-section">
+            <h1>ABAKADA</h1>
+            <div class="abakada-table">
+                <div><strong>A</strong><span class="speaker-icon">🔊</span></div>
+                <div><strong>E</strong><span class="speaker-icon">🔊</span></div>
+                <div><strong>I</strong><span class="speaker-icon">🔊</span></div>
+                <div><strong>O</strong><span class="speaker-icon">🔊</span></div>
+                <div><strong>U</strong><span class="speaker-icon">🔊</span></div>
+
+                <div>ba <span class="speaker-icon">🔊</span></div>
+                <div>be <span class="speaker-icon">🔊</span></div>
+                <div>bi <span class="speaker-icon">🔊</span></div>
+                <div>bo <span class="speaker-icon">🔊</span></div>
+                <div>bu <span class="speaker-icon">🔊</span></div>
+
+                <div>ka <span class="speaker-icon">🔊</span></div>
+                <div>ke <span class="speaker-icon">🔊</span></div>
+                <div>ki <span class="speaker-icon">🔊</span></div>
+                <div>ko <span class="speaker-icon">🔊</span></div>
+                <div>ku <span class="speaker-icon">🔊</span></div>
+
+                <div>da <span class="speaker-icon">🔊</span></div>
+                <div>de <span class="speaker-icon">🔊</span></div>
+                <div>di <span class="speaker-icon">🔊</span></div>
+                <div>do <span class="speaker-icon">🔊</span></div>
+                <div>du <span class="speaker-icon">🔊</span></div>
+
+                <div>ga <span class="speaker-icon">🔊</span></div>
+                <div>ge <span class="speaker-icon">🔊</span></div>
+                <div>gi <span class="speaker-icon">🔊</span></div>
+                <div>go <span class="speaker-icon">🔊</span></div>
+                <div>gu <span class="speaker-icon">🔊</span></div>
+
+                <div>ha <span class="speaker-icon">🔊</span></div>
+                <div>he <span class="speaker-icon">🔊</span></div>
+                <div>hi <span class="speaker-icon">🔊</span></div>
+                <div>ho <span class="speaker-icon">🔊</span></div>
+                <div>hu <span class="speaker-icon">🔊</span></div>
+
+                <div>la <span class="speaker-icon">🔊</span></div>
+                <div>le <span class="speaker-icon">🔊</span></div>
+                <div>li <span class="speaker-icon">🔊</span></div>
+                <div>lo <span class="speaker-icon">🔊</span></div>
+                <div>lu <span class="speaker-icon">🔊</span></div>
+
+                <div>ma <span class="speaker-icon">🔊</span></div>
+                <div>me <span class="speaker-icon">🔊</span></div>
+                <div>mi <span class="speaker-icon">🔊</span></div>
+                <div>mo <span class="speaker-icon">🔊</span></div>
+                <div>mu <span class="speaker-icon">🔊</span></div>
+
+                <div>na <span class="speaker-icon">🔊</span></div>
+                <div>ne <span class="speaker-icon">🔊</span></div>
+                <div>ni <span class="speaker-icon">🔊</span></div>
+                <div>no <span class="speaker-icon">🔊</span></div>
+                <div>nu <span class="speaker-icon">🔊</span></div>
+
+                <div>nga <span class="speaker-icon">🔊</span></div>
+                <div>nge <span class="speaker-icon">🔊</span></div>
+                <div>ngi <span class="speaker-icon">🔊</span></div>
+                <div>ngo <span class="speaker-icon">🔊</span></div>
+                <div>ngu <span class="speaker-icon">🔊</span></div>
+
+                <div>pa <span class="speaker-icon">🔊</span></div>
+                <div>pe <span class="speaker-icon">🔊</span></div>
+                <div>pi <span class="speaker-icon">🔊</span></div>
+                <div>po <span class="speaker-icon">🔊</span></div>
+                <div>pu <span class="speaker-icon">🔊</span></div>
+
+                <div>ra <span class="speaker-icon">🔊</span></div>
+                <div>re <span class="speaker-icon">🔊</span></div>
+                <div>ri <span class="speaker-icon">🔊</span></div>
+                <div>ro <span class="speaker-icon">🔊</span></div>
+                <div>ru <span class="speaker-icon">🔊</span></div>
+
+                <div>sa <span class="speaker-icon">🔊</span></div>
+                <div>se <span class="speaker-icon">🔊</span></div>
+                <div>si <span class="speaker-icon">🔊</span></div>
+                <div>so <span class="speaker-icon">🔊</span></div>
+                <div>su <span class="speaker-icon">🔊</span></div>
+
+                <div>ta <span class="speaker-icon">🔊</span></div>
+                <div>te <span class="speaker-icon">🔊</span></div>
+                <div>ti <span class="speaker-icon">🔊</span></div>
+                <div>to <span class="speaker-icon">🔊</span></div>
+                <div>tu <span class="speaker-icon">🔊</span></div>
+
+                <div>wa <span class="speaker-icon">🔊</span></div>
+                <div>we <span class="speaker-icon">🔊</span></div>
+                <div>wi <span class="speaker-icon">🔊</span></div>
+                <div>wo <span class="speaker-icon">🔊</span></div>
+                <div>wu <span class="speaker-icon">🔊</span></div>
+
+                <div>ya <span class="speaker-icon">🔊</span></div>
+                <div>ye <span class="speaker-icon">🔊</span></div>
+                <div>yi <span class="speaker-icon">🔊</span></div>
+                <div>yo <span class="speaker-icon">🔊</span></div>
+                <div>yu <span class="speaker-icon">🔊</span></div>
+
+            </div>
+        </div>
+
+        <div class="buttons-section">
+            <button class="category-button">Family</button>
+            <button class="category-button">Parts of the Body</button>
+            <button class="category-button">Transportation</button>
+            <button class="category-button">Days and Months</button>
+            <button class="category-button">Philippine Money</button>
+        </div>
+    </div>
+
+</body>
+</html>

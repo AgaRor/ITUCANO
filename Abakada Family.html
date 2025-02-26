@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Family Page</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #dcdcdc;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+            color: #1f1f1f;
+        }
+
+        .container {
+            display: flex;
+            max-width: 1100px;
+            width: 100%;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        /* Family Section */
+        .family-section {
+            flex: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .family-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .card {
+            background: #faf5dc;
+            padding: 15px;
+            text-align: center;
+            border-radius: 10px;
+            width: 140px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .card img {
+            width: 80px;
+            height: auto;
+        }
+
+        .card strong {
+            font-size: 16px;
+        }
+
+        .card p {
+            font-size: 14px;
+            margin: 5px 0;
+        }
+
+        .speaker-icon {
+            cursor: pointer;
+            font-size: 16px; 
+        }
+
+        /* Example Sentences Section */
+        .sentences-section {
+        flex: 1;
+        background: #fff8e1; /* Softer yellow background */
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        border: 2px solid #f0d37e; /* Border to match design */
+        max-width: 400px; /* Limits width */
+        height: auto; /* Prevents unnecessary stretching */
+}
+
+
+
+        .sentences-section h2 {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .sentences-section ul {
+            list-style: none;
+            padding: 0;
+            font-size: 14px;
+        }
+
+        .sentences-section li {
+            margin: 10px 0;
+        }
+
+        /* Take Quiz Button */
+        .quiz-button {
+            background: #4caf50;
+            color: white;
+            border: none;
+            padding: 15px;
+            font-size: 16px;
+            text-align: center;
+            border-radius: 5px;
+            cursor: pointer;
+            display: block;
+            width: 100%;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .quiz-button:hover {
+            background: #388e3c;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>FAMILY</h1>
+
+    <div class="container">
+        <!-- Family Section -->
+        <div class="family-section">
+            <div class="card" style="border: 2px solid blue;">
+                <img src="Image/Family.png" alt="Family">
+                <p><strong>Pa-mil-ya</strong> <span class="speaker-icon">🔊</span></p>
+                <p>Family</p>
+            </div>
+
+            <div class="family-grid">
+                <div class="card">
+                    <img src="Image/Ina.png" alt="Mother">
+                    <p><strong>I-na</strong> <span class="speaker-icon">🔊</span></p>
+                    <p>Mother</p>
+                </div>
+                <div class="card">
+                    <img src="Image/Ama.png" alt="Father">
+                    <p><strong>A-ma</strong> <span class="speaker-icon">🔊</span></p>
+                    <p>Father</p>
+                </div>
+                <div class="card">
+                    <img src="Image/Lola.png" alt="Grandfather">
+                    <p><strong>Lo-lo</strong> <span class="speaker-icon">🔊</span></p>
+                    <p>Grandfather</p>
+                </div>
+                <div class="card">
+                    <img src="Image/Lola.png" alt="Grandmother">
+                    <p><strong>Lo-la</strong> <span class="speaker-icon">🔊</span></p>
+                    <p>Grandmother</p>
+                </div>
+                <div class="card">
+                    <img src="Image/Tito.png" alt="Uncle">
+                    <p><strong>Ti-to</strong> <span class="speaker-icon">🔊</span></p>
+                    <p>Uncle</p>
+                </div>
+                <div class="card">
+                    <img src="Image/Tita.png" alt="Aunt">
+                    <p><strong>Ti-ta</strong> <span class="speaker-icon">🔊</span></p>
+                    <p>Aunt</p>
+                </div>
+                <div class="card">
+                    <img src="Image/kuya.png" alt="Older Brother">
+                    <p><strong>Ku-ya</strong> <span class="speaker-icon">🔊</span></p>
+                    <p>Older Brother</p>
+                </div>
+                <div class="card">
+                    <img src="Image/ate.png" alt="Older Sister">
+                    <p><strong>A-te</strong> <span class="speaker-icon">🔊</span></p>
+                    <p>Older Sister</p>
+                </div>
+                <div class="card">
+                    <img src="Image/Bunsong lalaki.png" alt="Little Brother">
+                    <p><strong>Bun-song La-la-ki</strong> <span class="speaker-icon">🔊</span></p>
+                    <p>Little Brother</p>
+                </div>
+                <div class="card">
+                    <img src="Image/Bunsong babae.png" alt="Little Sister">
+                    <p><strong>Bun-song Ba-ba-e</strong> <span class="speaker-icon">🔊</span></p>
+                    <p>Little Sister</p>
+                </div>
+                <div class="card">
+                    <img src="Image/Pinsang lalaki.png" alt="Male Cousin">
+                    <p><strong>Pin-sang La-la-ki</strong> <span class="speaker-icon">🔊</span></p>
+                    <p>Male Cousin</p>
+                </div>
+                <div class="card">
+                    <img src="Image/Pinsang babae.png" alt="Female Cousin">
+                    <p><strong>Pin-sang Ba-ba-e</strong> <span class="speaker-icon">🔊</span></p>
+                    <p>Female Cousin</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Example Sentences Section -->
+        <div class="sentences-section">
+            <h2>Example Sentences</h2>
+            <ul>
+                <li><strong>Kumusta ka Lola/Lolo?</strong><br>How are you Grandmother/Grandfather?</li>
+                <li><strong>Ano pangalan ng iyong Ama/Ina?</strong><br>What is your father's/mother's name?</li>
+                <li><strong>Saan ka pupunta Tito/Tita?</strong><br>Where are you going Uncle/Aunt?</li>
+                <li><strong>Ilan taon ang Kuya/Ate mo?</strong><br>How old is your older Brother/Sister?</li>
+                <li><strong>Isasama mo ba ang iyong pinsang lalaki/babae?</strong><br>Will you bring your male/female cousin?</li>
+                <li><strong>Napaliguan mo na ba ang iyong bunsong lalaki/babae?</strong><br>Have you bathed your little brother/sister?</li>
+            </ul>
+            <button class="quiz-button">Take Quiz</button>
+        </div>
+    </div>
+
+</body>
+</html>
