@@ -235,7 +235,7 @@ $_SESSION['selected_icon'] = $icon_path;
                 <button id="Aba"></button>
                 <button id="Pag-bigkas"></button>
             </div>
-            <button class="quiz-button">QUIZ BUTTON</button>
+           <a href="quiz_form/quizform.html"> <button class="quiz-button">QUIZ BUTTON</button></a>
         </div>
     </div>
 </body>
